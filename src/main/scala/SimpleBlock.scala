@@ -17,7 +17,7 @@ case class SimpleBlock(index: Int,
 
   val hash: String =
     MessageDigest.getInstance("MD5")
-      .digest(s"$index$payload$lastHash".getBytes("UTF-8"))
+      .digest(s"$index$lastHash$payload$createTs".getBytes("UTF-8"))
       .map("%02x".format(_))
       .mkString
 
